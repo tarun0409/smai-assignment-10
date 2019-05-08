@@ -62,7 +62,7 @@ for h in H:
             X_test, y_test = np.array(X_test), np.array(y_test)
             model = Sequential()
             for m in range(0,h):
-                model.add(LSTM(units=c,return_sequences=True))
+                model.add(SimpleRNN(units=c,return_sequences=True))
             model.add(Flatten())
             model.add(Dense(units = 1))
             model.compile(optimizer = 'adam', loss = 'mean_squared_error')
